@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed",
+  "name": "chennighan-lowes-angular-app",
   "private": true,
-  "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "version": "0.0.1",
+  "description": "chennighan lowes angular application",
+  "repository": "https://github.com/chennighan/LowesAssessment",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.7.7",
