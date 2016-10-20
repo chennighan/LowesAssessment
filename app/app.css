@@ -42,6 +42,15 @@ img {
 }
 
 .productPrice {
+  width: 90%;
+  font-size: 20px;
+  margin-top: 25px;
+  position: absolute;
+  bottom: 25%;
+  left: 5%;
+}
+
+.productPriceSpotlight {
   font-size: 20px;
   margin-top: 25px;
 }
