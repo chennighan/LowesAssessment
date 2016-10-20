@@ -1,0 +1,37 @@
+<!-- BEGIN product spotlight -->
+<div class="productSpotlight productContainer row">
+  <div class="col-xs-6 col-sm-4 text-center">
+    <img class="spotlightImage" src="{{ spotlightProduct.imageUrls.md }}">
+  </div>
+  <div class="col-xs-6 col-sm-4">
+    <p class="spotlightDescription">{{ spotlightProduct.description }}<p>
+      <!--
+        limiting this to the first 3 (not sure if that's what is wanted but it makes it much less cluttered).
+        Ideally if this was a much larger project you'd have some sort of key to denote the importance of display
+        or even an algorithm to determine it
+      -->
+    <div ng-repeat="bullet in spotlightProduct.marketingBullets | limitTo:bulletLimiter">
+      <!-- symbols actually create a unique problem here so we use ng-bind-html -->
+      <p>&#8226; &nbsp <span ng-bind-html="bullet"></span></p>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4 text-center">
+    <!-- I could make this a really nice modal instead of a JavaScript Alert, but the directions called for a JavaScript Alert -->
+    <button class="productListButton btn btn-lg" ng-click="alertPrice()">Add to Cart</button>
+    <p class="productPrice">${{ spotlightProduct.pricing.price.retail }}</p>
+  </div>
+</div>
+<!-- END product spotlight -->
+
+<!-- BEGIN product list section -->
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-4 text-center" ng-repeat="product in items">
+    <div class="productContainer productListItem" ng-mouseOver="updateSpotlight(product)">
+      <img src="{{ product.imageUrls.sm }}">
+      <p>{{ product.brand }} {{ product.description }}</p>
+      <p class="productPrice">${{ product.pricing.price.retail }}</p>
+      <button class="productListButton viewMoreButton btn btn-lg">View More</button>
+    </div>
+  </div>
+</div>
+<!-- END product list section -->

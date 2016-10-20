@@ -1,25 +1,47 @@
-/* app css stylesheet */
+/*
+  Author: Chennighan
+  Description: The main file for our apps styling.
+*/
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+img {
+  padding: 25px 0px 25px 0px;
 }
 
-.menu:before {
-  content: "[";
+.productContainer {
+  margin: 5px;
+  padding: 10px;
+  background: #E5E5E5;
+  border: solid 2px #BFBFBF;
 }
 
-.menu:after {
-  content: "]";
+.spotlightDescription {
+  padding-bottom: 10px;
 }
 
-.menu > li {
-  display: inline;
+.productListItem {
+  height: 360px;
+  max-height: 360px;
+  position: relative;
 }
 
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+/* personally i like a border radius, but the jpg didn't have one so i will override it */
+.productListButton {
+  width: 90%;
+  background: #B7B7B7;
+  border: 1px solid;
+  border-radius: 0;
+}
+.productListButton:hover {
+  background: #CCCCCC;
+}
+
+.viewMoreButton {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+}
+
+.productPrice {
+  font-size: 20px;
+  margin-top: 25px;
 }

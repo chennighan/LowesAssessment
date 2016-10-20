@@ -1,14 +1,20 @@
+/*
+  Author: Chennighan
+  Description: Our main app file where we declare our modules and components we'll be using as well as most of the global config.
+*/
+
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
+var myApp = angular.module('myApp', [
   'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
+  'ngResource',
+  'ngSanitize',
+  'myApp.product',
   'myApp.version'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+]);
 
+myApp.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+  $locationProvider.hashPrefix('!');
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
