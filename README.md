@@ -25,6 +25,16 @@ folders in your project.
 angular-seed changes this location through the `.bowerrc` file.  Putting it in the app folder makes
 it easier to serve the files by a webserver.*
 
+### If You're Having Trouble  
+If you're getting an error such as:  
+```
+GET /bower_components/angular-sanitize/angular-sanitize.js" Error (404):
+```
+Then the bower install probably did not run successfully. I had to run a bower install, and in my specific case use allow root:  
+```
+sudo bower install --allow-root
+```
+
 ### Run the Application
 
 We have preconfigured the project with a simple development web server.  The simplest way to start
