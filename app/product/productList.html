@@ -1,6 +1,7 @@
 <!-- BEGIN product spotlight -->
 <div class="productSpotlight productContainer row">
   <div class="col-xs-6 col-sm-4 text-center">
+    <!-- the images provided via url from the api have crappy white with no alpha removal. Didn't have time to programmatically do this -->
     <img class="spotlightImage" src="{{ spotlightProduct.imageUrls.md }}">
   </div>
   <div class="col-xs-6 col-sm-4">
@@ -27,6 +28,7 @@
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-md-4 text-center" ng-repeat="product in items">
     <div class="productContainer productListItem" ng-mouseOver="updateSpotlight(product)">
+      <!-- the images provided via url from the api have crappy white with no alpha removal. Didn't have time to programmatically do this -->
       <img src="{{ product.imageUrls.sm }}">
       <p>{{ product.brand }} {{ product.description }}</p>
       <p class="productPrice">${{ product.pricing.price.retail }}</p>
