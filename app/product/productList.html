@@ -1,7 +1,11 @@
 <!-- BEGIN product spotlight -->
 <div class="productSpotlight productContainer row">
   <div class="col-xs-6 col-sm-4 text-center">
-    <!-- the images provided via url from the api have crappy white with no alpha removal. Didn't have time to programmatically do this -->
+    <!--
+      the images provided via url from the api have crappy white with no alpha removal. Didn't have time to programmatically do this.
+      I'm also aware that I didn't implement the EnergyStar image, but I didn't see anything on the object that would have indicated where
+      the image was or if it even qualified for it other than arbitrary bullet points on the marketing bullets object
+    -->
     <img class="spotlightImage" src="{{ spotlightProduct.imageUrls.md }}">
   </div>
   <div class="col-xs-6 col-sm-4">
@@ -12,12 +16,12 @@
         or even an algorithm to determine it
       -->
     <div ng-repeat="bullet in spotlightProduct.marketingBullets | limitTo:bulletLimiter">
-      <!-- symbols actually create a unique problem here so we use ng-bind-html -->
+      <!-- symbols actually create a unique problem here so we use ng-bind-html which takes care of it. -->
       <p>&#8226; &nbsp <span ng-bind-html="bullet"></span></p>
     </div>
   </div>
   <div class="col-xs-12 col-sm-4 text-center">
-    <!-- I could make this a really nice modal instead of a JavaScript Alert, but the directions called for a JavaScript Alert -->
+    <!-- I could make this a really nice modal instead of a JavaScript Alert, but the directions called for a JavaScript Alert. -->
     <button class="productListButton btn btn-lg" ng-click="alertPrice()">Add to Cart</button>
     <p class="productPriceSpotlight">${{ spotlightProduct.pricing.price.retail }}</p>
   </div>
@@ -28,7 +32,7 @@
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-md-4 text-center" ng-repeat="product in items">
     <div class="productContainer productListItem" ng-mouseOver="updateSpotlight(product)">
-      <!-- the images provided via url from the api have crappy white with no alpha removal. Didn't have time to programmatically do this -->
+      <!-- the images provided via url from the api have crappy white with no alpha removal. Didn't have time to programmatically do this. -->
       <img src="{{ product.imageUrls.sm }}">
       <p>{{ product.brand }} {{ product.description }}</p>
       <p class="productPrice">${{ product.pricing.price.retail }}</p>
